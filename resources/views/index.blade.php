@@ -4,8 +4,8 @@
 
 @section('content')
 
-    <body>
+    <main>
         <h1>Hello World!</h1>
-    </body>
+    </main>
 
 @endsection
