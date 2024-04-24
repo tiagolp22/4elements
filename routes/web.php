@@ -10,3 +10,7 @@ Route::get('/', function (Request $request) {
 Route::get('/form', function () {
     return view('form');
 })->name("form");
+
+Route::get('/recette', function () {
+    return view('recette');
+})->name("recette");
