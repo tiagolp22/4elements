@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Models\Recette;
 
 
 // Route::get('/', [RecetteController::class, 'index']);

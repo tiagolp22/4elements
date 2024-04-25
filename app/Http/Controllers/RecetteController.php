@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Recette;
 
 class RecetteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Affiche une liste des produits.
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $recettes = Recette::all();
+        return view('index', compact('recettes'));
     }
 
     /**
