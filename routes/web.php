@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Models\Recette;
+use App\Http\Controllers\RecetteController;
 
 
-// Route::get('/', [RecetteController::class, 'index']);
+Route::prefix("/")->resource('/', RecetteController::class);
 
 Route::get('/form', function () {
     return view('form');

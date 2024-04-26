@@ -14,7 +14,7 @@ class RecetteController extends Controller
     public function index()
     {
         $recettes = Recette::all();
-        return view('index', compact('recettes'));
+        return view('index', ["recettes" => $recettes, "title" => "4 Éléments"]);
     }
 
     /**
@@ -36,9 +36,9 @@ class RecetteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Recette $recette)
     {
-        //
+        return view('recette', ["recette" => $recette]);
     }
 
     /**
