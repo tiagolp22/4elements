@@ -6,6 +6,7 @@ use App\Http\Controllers\RecetteController;
 
 
 Route::prefix("/")->resource('/', RecetteController::class);
+Route::get('/receitas/{recette}', 'RecetteController@show')->name('recette.show');
 
 Route::get('/form', function () {
     return view('form');

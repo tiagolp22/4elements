@@ -25,96 +25,31 @@
         </div>
         <section class="container mx-auto p-10 md:p-20 antialiased">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <article
-                    class="flex flex-wrap md:flex-nowrap shadow-lg group cursor-pointer transform duration-500 hover:-translate-y-1">
-                    <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}""
-                        alt="Imagem da receita">
-                    <div class="w-full md:w-auto">
-                        <div class="p-5">
-                            <h1 class="text-2xl font-semibold text-gray-800">Titre</h1>
-                            <p class="text-xl text-gray-400 mt-2">description</p>
-                            <button
-                                class="mt-3 py-2 px-5 bg-orange-700 hover:bg-orange-600 font-bold text-white rounded-lg">
-                                En savoir plus
-                            </button>
+
+                @foreach ($recettes as $recette)
+                    <article
+                        class="flex flex-wrap md:flex-nowrap shadow-lg group cursor-pointer transform duration-500 hover:-translate-y-1">
+                        <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}"
+                            alt="Imagem da receita">
+                        <div class="w-full md:w-auto">
+                            <div class="p-5">
+                                <h1 class="text-2xl font-semibold text-gray-800">
+                                    {{ $recette->nom }}</a>
+                                </h1>
+                                <p class="text-xl text-gray-400 mt-2">{{ $recette->description }}</p>
+
+                                <a href="{{ route('recette.show', ['recette' => $recette->id]) }}">
+                                    <button
+                                        class="mt-3 py-2 px-5 bg-orange-700 hover:bg-orange-600 font-bold text-white rounded-lg">
+                                        En savoir plus
+                                    </button> </a>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article
-                    class="flex flex-wrap md:flex-nowrap shadow-lg group cursor-pointer transform duration-500 hover:-translate-y-1">
-                    <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}"
-                        alt="Imagem da receita">
-                    <div class="w-full md:w-auto">
-                        <div class="p-5">
-                            <h1 class="text-2xl font-semibold text-gray-800">Titre</h1>
-                            <p class="text-xl text-gray-400 mt-2">description</p>
-                            <button
-                                class="mt-3 py-2 px-5 bg-orange-700 hover:bg-orange-600 font-bold text-white rounded-lg">
-                                En savoir plus
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="flex flex-wrap md:flex-nowrap shadow-lg group cursor-pointer transform duration-500 hover:-translate-y-1">
-                    <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}"
-                        alt="Imagem da receita">
-                    <div class="w-full md:w-auto">
-                        <div class="p-5">
-                            <h1 class="text-2xl font-semibold text-gray-800">Titre</h1>
-                            <p class="text-xl text-gray-400 mt-2">description</p>
-                            <button
-                                class="mt-3 py-2 px-5 bg-orange-700 hover:bg-orange-600 font-bold text-white rounded-lg">
-                                En savoir plus
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="flex flex-wrap md:flex-nowrap shadow-lg group cursor-pointer transform duration-500 hover:-translate-y-1">
-                    <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}""
-                        alt="Imagem da receita">
-                    <div class="w-full md:w-auto">
-                        <div class="p-5">
-                            <h1 class="text-2xl font-semibold text-gray-800">Titre</h1>
-                            <p class="text-xl text-gray-400 mt-2">description</p>
-                            <button
-                                class="mt-3 py-2 px-5 bg-orange-700 hover:bg-orange-600 font-bold text-white rounded-lg">
-                                En savoir plus
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="flex flex-wrap md:flex-nowrap shadow-lg group cursor-pointer transform duration-500 hover:-translate-y-1">
-                    <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}""
-                        alt="Imagem da receita">
-                    <div class="w-full md:w-auto">
-                        <div class="p-5">
-                            <h1 class="text-2xl font-semibold text-gray-800">Titre</h1>
-                            <p class="text-xl text-gray-400 mt-2">description</p>
-                            <button
-                                class="mt-3 py-2 px-5 bg-orange-700 hover:bg-orange-600 font-bold text-white rounded-lg">
-                                En savoir plus
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <article
-                    class="flex flex-wrap md:flex-nowrap shadow-lg group cursor-pointer transform duration-500 hover:-translate-y-1">
-                    <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}""
-                        alt="Imagem da receita">
-                    <div class="w-full md:w-auto">
-                        <div class="p-5">
-                            <h1 class="text-2xl font-semibold text-gray-800">Titre</h1>
-                            <p class="text-xl text-gray-400 mt-2">description</p>
-                            <button
-                                class="mt-3 py-2 px-5 bg-orange-700 hover:bg-orange-600 font-bold text-white rounded-lg">
-                                En savoir plus
-                            </button>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                @endforeach
+
+
+
             </div>
         </section>
 
