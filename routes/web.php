@@ -1,17 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 use App\Http\Controllers\RecetteController;
 
 
-Route::prefix("/")->resource('/', RecetteController::class);
-Route::get('/receitas/{recette}', 'RecetteController@show')->name('recette.show');
+Route::resource('/recettes', RecetteController::class);
+
 
 Route::get('/form', function () {
     return view('form');
-})->name("form");
+})->name('form');
+
+Route::get('/recettes/{recette}', [RecetteController::class, 'show'])->name('recettes.show');
 
 Route::get('/recette', function () {
     return view('recette');
-})->name("recette");
+})->name('recette');
+
+

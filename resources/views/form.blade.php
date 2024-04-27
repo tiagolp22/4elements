@@ -14,7 +14,7 @@
                         </h1>
                         <div class="w-full flex-1 mt-8">
                             <div class="mx-auto max-w-xs">
-                                <form method="POST" action="{{ route('') }}">
+                                <form method="POST" action="{{ route('recettes.store') }}">
                                     @csrf
                                     <input
                                         class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-orange-500 placeholder-orange-500 text-sm focus:outline-none focus:border-orange-500 focus:bg-white"
