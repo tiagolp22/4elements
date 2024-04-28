@@ -38,7 +38,7 @@
                                 </h1>
                                 <p class="text-xl text-gray-400 mt-2">{{ $recette->description }}</p>
 
-                                <a href="{{ route('recette.show', ['recette' => $recette->id]) }}">
+                                <a href="{{ route('recettes.show', ['recette' => $recette->id]) }}">
                                     <button
                                         class="mt-3 py-2 px-5 bg-orange-700 hover:bg-orange-600 font-bold text-white rounded-lg">
                                         En savoir plus

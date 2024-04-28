@@ -34,14 +34,14 @@ class RecetteController extends Controller
             'nom' => 'required|string|max:255',
             'description' => 'required|string|max:500',
             'ingredients' => 'required|string',
-            'preparation' => 'required|string',
+            'etapes' => 'required|string',
         ]);
 
         $recette = new Recette();
         $recette->nom = $validatedData['nom'];
         $recette->description = $validatedData['description'];
         $recette->ingredients = $validatedData['ingredients'];
-        $recette->preparation = $validatedData['preparation'];
+        $recette->etapes = $validatedData['etapes'];
 
         try {
             $recette->save();

@@ -5,6 +5,15 @@
 @section('content')
 
     <main>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
             <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
                 <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
@@ -30,7 +39,7 @@
 
                                     <textarea
                                         class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-orange-500 placeholder-orange-500 text-sm focus:outline-none focus:border-orange-500 focus:bg-white mt-5"
-                                        placeholder="Étapes de Préparation" name="preparation" rows="4" required></textarea>
+                                        placeholder="Étapes de Préparation" name="etapes" rows="4" required></textarea>
 
                                     <button
                                         class="mt-5 tracking-wide font-semibold bg-orange-500 text-gray-100 w-full py-4 rounded-lg hover:bg-orange-600 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">

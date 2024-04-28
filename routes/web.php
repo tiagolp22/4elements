@@ -13,6 +13,8 @@ Route::get('/form', function () {
 
 Route::get('/recettes/{recette}', [RecetteController::class, 'show'])->name('recettes.show');
 
+Route::post('/recettes/store', [RecetteController::class, 'store'])->name('recettes.store');
+
 Route::get('/recette', function () {
     return view('recette');
 })->name('recette');
