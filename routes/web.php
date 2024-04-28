@@ -19,4 +19,9 @@ Route::get('/recette', function () {
     return view('recette');
 })->name('recette');
 
+Route::get('/recettes/{recette}/edit', [RecetteController::class, 'edit'])->name('recettes.edit');
+
+Route::put('/recettes/{recette}', [RecetteController::class, 'update'])->name('recettes.update');
+
+
 
