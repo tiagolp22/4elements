@@ -23,8 +23,4 @@ Route::get('/recette', function () {
 })->name('recette');
 
 Route::get('/recettes/{recette}/edit', [RecetteController::class, 'edit'])->name('recettes.edit');
-
-Route::put('/recettes/{recette}', [RecetteController::class, 'update'])->name('recettes.update');
-
-
-
+Route::post('/recettes/{recette}/edit', [RecetteController::class, 'update'])->name('recettes.update');

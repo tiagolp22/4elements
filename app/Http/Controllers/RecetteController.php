@@ -71,7 +71,7 @@ class RecetteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Recette $recette)
+    public function update(Request $request, Recette $recette,)
     {
         $validatedData = $request->validate([
             'nom' => 'required|string|max:255',
@@ -85,7 +85,7 @@ class RecetteController extends Controller
         $recette->ingredients = $validatedData['ingredients'];
         $recette->etapes = $validatedData['etapes'];
 
-        $recette->save();
+        $recette->update();
 
         return redirect()->route('recettes.index')->with('success', 'Recette mise à jour avec succès !');
     }
