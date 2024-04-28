@@ -61,7 +61,11 @@ class RecetteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $recette = Recette::where('id', $id)->first();
+
+        // dd($recette);
+
+        return view('edit', ["recette" => $recette]);
     }
 
     /**
