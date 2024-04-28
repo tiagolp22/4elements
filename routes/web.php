@@ -12,6 +12,9 @@ Route::get('/form', function () {
     return view('form');
 })->name("form");
 
+Route::post('/form', 'RecetteController@store')->name('recette.store');
+
+
 Route::get('/recette', function () {
     return view('recette');
 })->name("recette");

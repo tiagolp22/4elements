@@ -30,8 +30,17 @@ class RecetteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        $recette = new Recette();
+        $recette->nom = $request->nom;
+        $recette->description = $request->description;
+        $recette->ingredients = $request->ingredients;
+        $recette->etapes = $request->etapes;
+        $recette->save();
+        return redirect('/');
     }
+
+
     public function show(Recette $recette)
     {
         return view('recette', ["recette" => $recette]);
