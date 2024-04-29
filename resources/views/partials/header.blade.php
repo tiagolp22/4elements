@@ -6,7 +6,7 @@
                     style="max-width: 100%; max-height: 100%;" />
             </a>
         </div>
-        
+
         <div class="flex flex-1 justify-center items-center">
             <div class="flex items-center space-x-4">
                 <input type="text" placeholder="Rechercher..."

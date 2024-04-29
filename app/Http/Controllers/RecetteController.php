@@ -14,7 +14,7 @@ class RecetteController extends Controller
     public function index()
     {
         $recettes = Recette::all();
-        return view('index', ["recettes" => $recettes, "title" => "4 Éléments"]);
+        return view('index', ["recettes" => $recettes]);
     }
 
     /**
@@ -30,12 +30,27 @@ class RecetteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nom' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+            'ingredients' => 'required|string',
+            'etapes' => 'required|string',
+        ]);
+
+        $recette = new Recette();
+        $recette->nom = $validatedData['nom'];
+        $recette->description = $validatedData['description'];
+        $recette->ingredients = $validatedData['ingredients'];
+        $recette->etapes = $validatedData['etapes'];
+
+        try {
+            $recette->save();
+            return redirect()->route('recettes.index')->with('success', 'Recette enregistrée avec succès !');
+        } catch (\Exception $e) {
+            return back()->withInput()->withErrors(['save_error' => 'Erreur lors de l\'enregistrement: ' . $e->getMessage()]);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Recette $recette)
     {
         return view('recette', ["recette" => $recette]);
@@ -46,22 +61,42 @@ class RecetteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $recette = Recette::where('id', $id)->first();
+
+        // dd($recette);
+
+        return view('edit', ["recette" => $recette]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Recette $recette,)
     {
-        //
+        $validatedData = $request->validate([
+            'nom' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+            'ingredients' => 'required|string',
+            'etapes' => 'required|string',
+        ]);
+
+        $recette->nom = $validatedData['nom'];
+        $recette->description = $validatedData['description'];
+        $recette->ingredients = $validatedData['ingredients'];
+        $recette->etapes = $validatedData['etapes'];
+
+        $recette->update();
+
+        return redirect()->route('recettes.index')->with('success', 'Recette mise à jour avec succès !');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Recette $recette)
     {
-        //
+        $recette->delete();
+
+        return redirect()->route('recettes.index')->with('success', 'Recette supprimée avec succès !');
     }
 }
