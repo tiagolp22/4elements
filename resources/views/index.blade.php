@@ -29,7 +29,7 @@
                 @foreach ($recettes as $recette)
                     <article
                         class="flex flex-wrap md:flex-nowrap shadow-lg group cursor-pointer transform duration-500 hover:-translate-y-1">
-                        <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}"
+                        <img class="w-full md:w-52 object-cover h-64" src="{{ Vite::asset('resources/img/_8230dbd6-d8ec-42e7-bfd4-6d1fdcb96b8d.jpeg') }}"
                             alt="Imagem da receita">
                         <div class="w-full md:w-auto">
                             <div class="p-5">
