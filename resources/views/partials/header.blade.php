@@ -1,7 +1,7 @@
 <nav class="bg-orange-500 border-gray-200">
     <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <div class="flex items-center space-x-3 rtl:space-x-reverse">
-            <a href="{{ route('recettes.index') }}">
+            <a href="{{ route('index') }}">
                 <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="4elements" width="200" height="150"
                     style="max-width: 100%; max-height: 100%;" />
             </a>
@@ -20,7 +20,7 @@
         <div class="hidden md:flex md:items-center md:w-auto" id="navbar-default">
             <ul class="font-medium flex md:flex-row md:space-x-8 rtl:space-x-reverse md:border-0">
                 <li>
-                    <a href="{{ route('recettes.index') }}"
+                    <a href="{{ route('index') }}"
                         class="block py-2 px-3 text-white rounded hover:bg-orange-600 md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                         aria-current="page">Home</a>
                 </li>

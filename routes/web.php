@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecetteController;
 
 
-Route::resource('/recettes', RecetteController::class);
+Route::resource('/', RecetteController::class);
 
 
 Route::get('/form', function () {
