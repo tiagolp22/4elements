@@ -25,6 +25,7 @@
                             <div class="mx-auto max-w-xs">
                                 <form method="POST" action="{{ route('recettes.update', ['recette' => $recette]) }}">
                                     @csrf
+                                    @method('PUT')
                                     <input
                                         class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-orange-500 placeholder-orange-500 text-sm focus:outline-none focus:border-orange-500 focus:bg-white"
                                         type="text" placeholder="{{ $recette->nom }}" name="nom" required />

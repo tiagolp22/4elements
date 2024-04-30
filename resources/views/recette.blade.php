@@ -21,7 +21,7 @@
                                 </a>
                             </div>
                             <div class="w-1/2 px-2">
-                                <form action="{{ route('recettes.destroy', $recette->id) }}" method="POST">
+                                <form action="{{ route('recettes.destroy', ['recette' => $recette->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
