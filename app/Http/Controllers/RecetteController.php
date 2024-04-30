@@ -29,27 +29,33 @@ class RecetteController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'nom' => 'required|string|max:255',
-            'description' => 'required|string|max:500',
-            'ingredients' => 'required|string',
-            'etapes' => 'required|string',
-        ]);
+{
+    $validatedData = $request->validate([
+        'nom' => 'required|string|max:255',
+        'description' => 'required|string|max:500',
+        'ingredients' => 'required|string',
+        'etapes' => 'required|string',
+        'image' => 'required|image|max:2048',
+    ]);
 
-        $recette = new Recette();
-        $recette->nom = $validatedData['nom'];
-        $recette->description = $validatedData['description'];
-        $recette->ingredients = $validatedData['ingredients'];
-        $recette->etapes = $validatedData['etapes'];
+    $recette = new Recette();
+    $recette->nom = $validatedData['nom'];
+    $recette->description = $validatedData['description'];
+    $recette->ingredients = $validatedData['ingredients'];
+    $recette->etapes = $validatedData['etapes'];
 
-        try {
-            $recette->save();
-            return redirect()->route('recettes.index')->with('success', 'Recette enregistrée avec succès !');
-        } catch (\Exception $e) {
-            return back()->withInput()->withErrors(['save_error' => 'Erreur lors de l\'enregistrement: ' . $e->getMessage()]);
-        }
+    if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('images', 'public');
+        $recette->image = $path;
     }
+
+    try {
+        $recette->save();
+        return redirect()->route('recettes.index')->with('success', 'Recette enregistrée avec succès !');
+    } catch (\Exception $e) {
+        return back()->withInput()->withErrors(['save_error' => 'Erreur lors de l\'enregistrement: ' . $e->getMessage()]);
+    }
+}
 
     public function show(Recette $recette)
     {

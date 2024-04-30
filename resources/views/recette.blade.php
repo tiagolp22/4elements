@@ -10,7 +10,7 @@
                 <div class="flex flex-col md:flex-row -mx-4">
                     <div class="md:flex-1 px-4">
                         <div class="h-[460px] rounded-lg bg-orange-300 dark:bg-orange-700 mb-4">
-                            <img class="w-full h-full object-cover" src="{{ Vite::asset('resources/img/imgForm.jpeg') }}"
+                            <img class="w-full h-full object-cover rounded-2xl" src="{{ Vite::asset('storage/app/public/' . $recette->image) }}"
                                 alt="Product Image">
                         </div>
                     </div>

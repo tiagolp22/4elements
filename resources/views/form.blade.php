@@ -23,7 +23,7 @@
                         </h1>
                         <div class="w-full flex-1 mt-8">
                             <div class="mx-auto max-w-xs">
-                                <form method="POST" action="{{ route('recettes.store') }}">
+                                <form method="POST" action="{{ route('recettes.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <input
                                         class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-orange-500 placeholder-orange-500 text-sm focus:outline-none focus:border-orange-500 focus:bg-white"
@@ -40,6 +40,8 @@
                                     <textarea
                                         class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-orange-500 placeholder-orange-500 text-sm focus:outline-none focus:border-orange-500 focus:bg-white mt-5"
                                         placeholder="Étapes de Préparation" name="etapes" rows="4" required></textarea>
+
+                                    <input type="file" name="image" accept="image/*" required />
 
                                     <button
                                         class="mt-5 tracking-wide font-semibold bg-orange-500 text-gray-100 w-full py-4 rounded-lg hover:bg-orange-600 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
@@ -69,7 +71,7 @@
                 <div class="flex-1 bg-orange-100 text-center hidden lg:flex">
                     <div class="m-12 xl:m-16 w-full">
                         <img src="{{ Vite::asset('resources/img/imgForm.jpeg') }}" alt="4elements"
-                            class="w-full bg-contain bg-center bg-no-repeat" />
+                            class="w-full bg-contain bg-center bg-no-repeat rounded-2xl" />
                     </div>
                 </div>
             </div>
