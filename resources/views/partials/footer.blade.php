@@ -42,7 +42,8 @@
 
                 <div class="px-4 my-4 w-full sm:w-auto xl:w-1/5">
                     <div>
-                        <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Suivez-nous sur les réseaux sociaux</h2>
+                        <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Suivez-nous sur les
+                            réseaux sociaux</h2>
                     </div>
 
                     <a href="lien-facebook"
@@ -61,16 +62,15 @@
             </div>
         </div>
     </div>
-    <div class="bg-black py-4 text-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="-mx-4 flex flex-wrap justify-between">
-                <div class="px-4 w-full text-center sm:w-auto sm:text-left">
-                    <span>© {{ $annee }} par 4elements</span>
-                </div>
-                <div class="px-4 w-full text-center sm:w-auto sm:text-left">
-                    Fait avec ❤️ par 4elements.
-                </div>
+   <div class="bg-black py-4 text-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap">
+            <div class="px-4 w-full mx-auto text-center sm:w-auto sm:text-center">
+                <p class="text-center">© {{ $annee }} tous droits réservés | Fait avec 🧡 par 4Elements.</p>
             </div>
         </div>
     </div>
+</div>
+
+
 </footer>
